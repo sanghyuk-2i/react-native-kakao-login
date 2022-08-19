@@ -215,6 +215,51 @@ class RNKakaoLoginsModule(private val reactContext: ReactApplicationContext) : R
         }
     }
 
+    @ReactMethod
+    private fun addFriendsAccess(promise: Promise) {
+        UserApiClient.instance.me { user, error ->
+            if (error != null) {
+                Log.e(TAG, "사용자 정보 요청 실패", error)
+                promise.reject("RNKakaoLogins", "User is null 1")
+            }
+            else if (user != null) {
+                var scopes = mutableListOf<String>()
+                scopes.add("friends")
+                if (scopes.count() > 0) {
+                    Log.d(TAG, "사용자에게 추가 동의를 받아야 합니다.")
+
+                    //scope 목록을 전달하여 카카오 로그인 요청
+                    UserApiClient.instance.loginWithNewScopes(context = reactApplicationContext, scopes) { token, error ->
+                        if (error != null) {
+                            Log.e(TAG, "사용자 추가 동의 실패", error)
+                            promise.reject("RNKakaoLogins", "User is null 2")
+                        } else {
+                            Log.d(TAG, "allowed scopes: ${token!!.scopes}")
+                            if (token != null) {
+                                val (accessToken, accessTokenExpiresAt, refreshToken, refreshTokenExpiresAt, idToken, scopes) = token
+                                val map = Arguments.createMap()
+                                map.putString("accessToken", accessToken)
+                                map.putString("refreshToken", refreshToken)
+                                map.putString("idToken", idToken)
+                                map.putString("accessTokenExpiresAt", dateFormat(accessTokenExpiresAt))
+                                map.putString("refreshTokenExpiresAt", dateFormat(refreshTokenExpiresAt))
+                                val scopeArray = Arguments.createArray()
+                                if (scopes != null) {
+                                    for (scope in scopes) {
+                                        scopeArray.pushString(scope)
+                                    }
+                                }
+                                map.putArray("scopes", scopeArray)
+                                promise.resolve(map)
+                                return@loginWithNewScopes
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } 
+
     companion object {
         private const val TAG = "RNKakaoLoginModule"
     }

@@ -43,3 +43,4 @@ export declare const logout: () => Promise<string>;
 export declare const unlink: () => Promise<string>;
 export declare const getProfile: () => Promise<KakaoProfile | KakaoProfileNoneAgreement>;
 export declare const getAccessToken: () => Promise<KakaoAccessTokenInfo>;
+export declare const addFriendsAccess: () => Promise<KakaoOAuthToken | string>;

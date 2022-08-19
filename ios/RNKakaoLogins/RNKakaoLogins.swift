@@ -193,4 +193,49 @@ class RNKakaoLogins: NSObject {
             }
         }
     }
+    
+    @objc(addFriendsAccess:rejecter:)
+    func addFriendsAccess(_ resolve: @escaping RCTPromiseResolveBlock,
+               rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+         DispatchQueue.main.async {
+            UserApi.shared.me() { (user, error) in
+                if let error = error {
+                    reject("RNKakaoLogins", error.localizedDescription, nil)
+                }
+                else {
+                    if let user = user {
+                        var scopes = [String]()
+                        scopes.append("friends")
+                        
+                        if scopes.count > 0 {
+                            //scope 목록을 전달하여 카카오 로그인 요청
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
+                            UserApi.shared.loginWithKakaoAccount(scopes: scopes) { (oauthToken, error) in
+                                if let error = error {
+                                    reject("RNKakaoLogins", error.localizedDescription, nil)
+                                    print(error)
+                                }
+                                else {
+                                    _ = user
+                                    resolve([
+                                        "accessToken": oauthToken?.accessToken ?? "",
+                                        "refreshToken": oauthToken?.refreshToken ?? "" as Any,
+                                        "idToken": oauthToken?.idToken ?? "",
+                                        "accessTokenExpiresAt": dateFormatter.string(from: oauthToken!.expiredAt),
+                                        "refreshTokenExpiresAt": dateFormatter.string(from: oauthToken!.refreshTokenExpiredAt),
+                                        "scopes": oauthToken?.scopes ?? "",
+                                    ]);
+                                }
+                            }
+                        }
+                        else {
+                            resolve("사용자의 추가 동의가 필요하지 않습니다.")
+                            print("사용자의 추가 동의가 필요하지 않습니다.")
+                        }
+                    }
+                }
+            }
+         }
+    } 
 }
