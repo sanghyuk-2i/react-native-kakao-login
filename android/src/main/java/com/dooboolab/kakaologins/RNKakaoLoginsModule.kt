@@ -219,19 +219,15 @@ class RNKakaoLoginsModule(private val reactContext: ReactApplicationContext) : R
     private fun addFriendsAccess(promise: Promise) {
         UserApiClient.instance.me { user, error ->
             if (error != null) {
-                Log.e(TAG, "사용자 정보 요청 실패", error)
                 promise.reject("RNKakaoLogins", "User is null 1")
             }
             else if (user != null) {
                 var scopes = mutableListOf<String>()
                 scopes.add("friends")
                 if (scopes.count() > 0) {
-                    Log.d(TAG, "사용자에게 추가 동의를 받아야 합니다.")
-
                     //scope 목록을 전달하여 카카오 로그인 요청
                     UserApiClient.instance.loginWithNewScopes(context = reactApplicationContext, scopes) { token, error ->
                         if (error != null) {
-                            Log.e(TAG, "사용자 추가 동의 실패", error)
                             promise.reject("RNKakaoLogins", "User is null 2")
                         } else {
                             Log.d(TAG, "allowed scopes: ${token!!.scopes}")
