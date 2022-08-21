@@ -230,7 +230,6 @@ class RNKakaoLoginsModule(private val reactContext: ReactApplicationContext) : R
                         if (error != null) {
                             promise.reject("RNKakaoLogins", "User is null 2")
                         } else {
-                            Log.d(TAG, "allowed scopes: ${token!!.scopes}")
                             if (token != null) {
                                 val (accessToken, accessTokenExpiresAt, refreshToken, refreshTokenExpiresAt, idToken, scopes) = token
                                 val map = Arguments.createMap()
