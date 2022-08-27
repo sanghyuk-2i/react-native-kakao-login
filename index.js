@@ -144,7 +144,7 @@ export var addFriendsAccess = function () { return __awaiter(void 0, void 0, voi
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, RNKakaoLogins.getAccessToken()];
+                return [4 /*yield*/, RNKakaoLogins.addFriendsAccess()];
             case 1:
                 result = _a.sent();
                 return [2 /*return*/, result];

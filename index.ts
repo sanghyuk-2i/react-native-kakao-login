@@ -109,7 +109,8 @@ export const getAccessToken = async (): Promise<KakaoAccessTokenInfo> => {
 
 export const addFriendsAccess = async (): Promise<KakaoOAuthToken | string> => {
   try {
-    const result: KakaoOAuthToken | string = await RNKakaoLogins.getAccessToken();
+    const result: KakaoOAuthToken | string =
+      await RNKakaoLogins.addFriendsAccess();
 
     return result;
   } catch (err) {

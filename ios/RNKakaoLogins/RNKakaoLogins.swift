@@ -12,6 +12,8 @@ import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
 
+import SafariServices
+
 @objc(RNKakaoLogins)
 class RNKakaoLogins: NSObject {
 
