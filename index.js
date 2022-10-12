@@ -281,3 +281,11 @@ export var sendCustom = function (customTemplate, callback) {
         throw error;
     });
 };
+// export declare type KakaoShareLinkType = {
+//   sendCommerce: typeof sendCommerce;
+//   sendList: typeof sendList;
+//   sendFeed: typeof sendFeed;
+//   sendText: typeof sendText;
+//   sendLocation: typeof sendLocation;
+//   sendCustom: typeof sendCustom;
+// };

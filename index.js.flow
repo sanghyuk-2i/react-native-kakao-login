@@ -322,12 +322,3 @@ declare export var sendCustom: (
   customTemplate: CustomTemplateType,
   callback?: CallbackType
 ) => Promise<SendResultType>;
-export type KakaoShareLinkType = {
-  sendCommerce: typeof sendCommerce,
-  sendList: typeof sendList,
-  sendFeed: typeof sendFeed,
-  sendText: typeof sendText,
-  sendLocation: typeof sendLocation,
-  sendCustom: typeof sendCustom,
-  ...
-};

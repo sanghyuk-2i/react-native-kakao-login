@@ -130,7 +130,7 @@ export const addFriendsAccess = async (): Promise<KakaoOAuthToken | string> => {
  * @property imageWidth   이미지 가로 길이 (Option)
  * @property imageHeight  이미지 세로 길이 (Option)
  */
-export declare type ContentType = {
+export type ContentType = {
   title: string;
   imageUrl: string;
   link: LinkType;
@@ -145,7 +145,7 @@ export declare type ContentType = {
  * @property key    딥링크 key
  * @property value  딥링크 value
  */
-export declare type ExecutionParamType = {
+export type ExecutionParamType = {
   key: string;
   value: string;
 };
@@ -158,7 +158,7 @@ export declare type ExecutionParamType = {
  * @property iosExecutionParams       ios 딥링크 (Option)
  * @property androidExecutionParams   android 딥링크 (Option)
  */
-export declare type LinkType = {
+export type LinkType = {
   webUrl?: string;
   mobileWebUrl?: string;
   iosExecutionParams?: ExecutionParamType[];
@@ -174,7 +174,7 @@ export declare type LinkType = {
  * @property fixedDiscountPrice   정액 할인 가격 (Option)
  * @property productName          상품명 (Option)
  */
-export declare type CommerceType = {
+export type CommerceType = {
   regularPrice: number;
   discountPrice?: number;
   discountRate?: number;
@@ -188,7 +188,7 @@ export declare type CommerceType = {
  * @property title  버튼 타이틀
  * @property link   버튼 링크 타입
  */
-export declare type ButtonType = {
+export type ButtonType = {
   title: string;
   link: LinkType;
 };
@@ -202,7 +202,7 @@ export declare type ButtonType = {
  * @property subscriberCount  구독 수 (Option)
  * @property viewCount        조회 수 (Option)
  */
-export declare type SocialType = {
+export type SocialType = {
   commentCount?: number;
   likeCount?: number;
   sharedCount?: number;
@@ -278,7 +278,7 @@ export declare type ListTemplateType = {
  * @property buttons      버튼 배열 (Option)
  * @property buttonTitle  버튼이 하나일 때 버튼의 타이틀 (Option)
  */
-export declare type FeedTemplateType = {
+export type FeedTemplateType = {
   content: ContentType;
   social?: SocialType;
   buttons?: ButtonType[];
@@ -295,7 +295,7 @@ export declare type FeedTemplateType = {
  * @property buttons        버튼 배열 (Option)
  * @property buttonTitle    버튼이 하나일 때 버튼의 타이틀 (Option)
  */
-export declare type LocationTemplateType = {
+export type LocationTemplateType = {
   address: string;
   addressTitle?: string;
   content: ContentType;
@@ -312,7 +312,7 @@ export declare type LocationTemplateType = {
  * @property buttons        버튼 배열 (Option)
  * @property buttonTitle    버튼이 하나일 때 버튼의 타이틀 (Option)
  */
-export declare type TextTemplateType = {
+export type TextTemplateType = {
   text: string;
   link: LinkType;
   buttons?: ButtonType[];
@@ -325,7 +325,7 @@ export declare type TextTemplateType = {
  * @property templateId   템플릿 id
  * @property templateArgs 템플릿 args (key, value 형식) (Option)
  */
-export declare type CustomTemplateType = {
+export type CustomTemplateType = {
   templateId: number;
   templateArgs?: ExecutionParamType[];
 };
@@ -475,11 +475,11 @@ export const sendCustom = (
     });
 };
 
-export declare type KakaoShareLinkType = {
-  sendCommerce: typeof sendCommerce;
-  sendList: typeof sendList;
-  sendFeed: typeof sendFeed;
-  sendText: typeof sendText;
-  sendLocation: typeof sendLocation;
-  sendCustom: typeof sendCustom;
-};
+// export declare type KakaoShareLinkType = {
+//   sendCommerce: typeof sendCommerce;
+//   sendList: typeof sendList;
+//   sendFeed: typeof sendFeed;
+//   sendText: typeof sendText;
+//   sendLocation: typeof sendLocation;
+//   sendCustom: typeof sendCustom;
+// };
