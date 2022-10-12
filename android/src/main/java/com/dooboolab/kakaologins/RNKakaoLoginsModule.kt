@@ -1,7 +1,7 @@
 package com.dooboolab.kakaologins
 
 import com.facebook.react.bridge.*
-import com.kakao.sdk.common.KakaoSdk.*
+import com.kakao.sdk.common.KakaoSdk.init
 import com.kakao.sdk.common.model.AuthError
 import com.kakao.sdk.user.UserApiClient
 import com.kakao.sdk.user.model.User
@@ -499,6 +499,6 @@ class RNKakaoLoginsModule(private val reactContext: ReactApplicationContext) : R
     init {
         val kakaoAppKey = reactContext.resources.getString(
                 reactContext.resources.getIdentifier("kakao_app_key", "string", reactContext.packageName))
-        KakaoSdk.init(reactContext, kakaoAppKey)
+        init(reactContext, kakaoAppKey)
     }
 }
