@@ -219,7 +219,7 @@ export type SocialType = {
  * @property argument 카카오 링크 argument (android only)
  * @property callback 카카오 링크 후 콜백 데이터 (android only)
  */
-export declare type SendResultType = {
+export type SendResultType = {
   result: boolean;
   intent?: string;
   warning?: string;
@@ -233,10 +233,7 @@ export declare type SendResultType = {
  * @property error    에러
  * @property result   결과
  */
-export declare type CallbackType = (
-  error?: Error,
-  result?: SendResultType,
-) => void;
+export type CallbackType = (error?: Error, result?: SendResultType) => void;
 
 /**
  * CommerceTemplateType
@@ -246,7 +243,7 @@ export declare type CallbackType = (
  * @property buttons      버튼 배열 (Option)
  * @property buttonTitle  버튼이 하나일 때 버튼의 타이틀 (Option)
  */
-export declare type CommerceTemplateType = {
+export type CommerceTemplateType = {
   content: ContentType;
   commerce: CommerceType;
   buttons?: ButtonType[];
@@ -262,7 +259,7 @@ export declare type CommerceTemplateType = {
  * @property buttons      버튼 배열 (Option)
  * @property buttonTitle  버튼이 하나일 때 버튼의 타이틀 (Option)
  */
-export declare type ListTemplateType = {
+export type ListTemplateType = {
   headerTitle: string;
   headerLink: LinkType;
   contents: ContentType[];
@@ -336,7 +333,7 @@ export type CustomTemplateType = {
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export const sendCommerce = async (
+export const sendCommerce = (
   commerceTemplate: CommerceTemplateType,
   callback?: CallbackType,
 ): Promise<SendResultType> => {
@@ -360,7 +357,7 @@ export const sendCommerce = async (
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export const sendList = async (
+export const sendList = (
   listTemplate: ListTemplateType,
   callback?: CallbackType,
 ): Promise<SendResultType> => {
@@ -384,7 +381,7 @@ export const sendList = async (
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export const sendFeed = async (
+export const sendFeed = (
   feedTemplate: FeedTemplateType,
   callback?: CallbackType,
 ): Promise<SendResultType> => {
@@ -408,7 +405,7 @@ export const sendFeed = async (
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export const sendText = async (
+export const sendText = (
   textTemplate: TextTemplateType,
   callback?: CallbackType,
 ): Promise<SendResultType> => {
@@ -432,7 +429,7 @@ export const sendText = async (
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export const sendLocation = async (
+export const sendLocation = (
   locationTemplate: LocationTemplateType,
   callback?: CallbackType,
 ): Promise<SendResultType> => {
@@ -456,7 +453,7 @@ export const sendLocation = async (
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export const sendCustom = async (
+export const sendCustom = (
   customTemplate: CustomTemplateType,
   callback?: CallbackType,
 ): Promise<SendResultType> => {

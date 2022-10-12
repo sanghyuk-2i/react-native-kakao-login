@@ -9,8 +9,7 @@ import java.util.*
 
 class RNKakaoLoginsPackage : ReactPackage {
     override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
-        // return Arrays.asList<NativeModule>(RNKakaoLoginsModule(reactContext))
-        return listOf(RNKakaoLoginsModule(reactContext))
+        return Arrays.asList<NativeModule>(RNKakaoLoginsModule(reactContext))
     }
 
     override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
