@@ -78,7 +78,7 @@ dependencies {
   implementation "com.kakao.sdk:v2-user:${ReactNative.ext.getVersion("kakao", "sdk")}" // 카카오 로그인
   implementation "com.kakao.sdk:v2-talk:${ReactNative.ext.getVersion("kakao", "sdk")}" // 친구, 메시지(카카오톡)
   implementation "com.kakao.sdk:v2-story:${ReactNative.ext.getVersion("kakao", "sdk")}" // 카카오 스토리
-  implementation "com.kakao.sdk:v2-link:${ReactNative.ext.getVersion("kakao", "sdk")}"
+  implementation "com.kakao.sdk:v2-share:2.11.1"
 }
 
 ReactNative.shared.applyPackageVersion()
