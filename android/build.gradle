@@ -18,7 +18,6 @@ buildscript {
 }
 
 plugins { id 'kotlin-android' }
-plugins { id 'kotlin-android-extension' }
 plugins { id 'com.android.library' }
 plugins { id "io.invertase.gradle.build" version "1.5" }
 
