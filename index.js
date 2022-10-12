@@ -161,126 +161,138 @@ export var addFriendsAccess = function () { return __awaiter(void 0, void 0, voi
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export var sendCommerce = function (commerceTemplate, callback) {
-    return RNKakaoLogins.sendCommerce(commerceTemplate)
-        .then(function (result) {
-        if (callback && typeof callback === 'function') {
-            callback(undefined, result);
-        }
-        return result;
-    })
-        .catch(function (error) {
-        if (callback && typeof callback === 'function') {
-            callback(error, undefined);
-        }
-        throw error;
+export var sendCommerce = function (commerceTemplate, callback) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        return [2 /*return*/, RNKakaoLogins.sendCommerce(commerceTemplate)
+                .then(function (result) {
+                if (callback && typeof callback === 'function') {
+                    callback(undefined, result);
+                }
+                return result;
+            })
+                .catch(function (error) {
+                if (callback && typeof callback === 'function') {
+                    callback(error, undefined);
+                }
+                throw error;
+            })];
     });
-};
+}); };
 /**
  * sendList
  * @param {ListTemplateType} listTemplate ListTemplate Item
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export var sendList = function (listTemplate, callback) {
-    return RNKakaoLogins.sendList(listTemplate)
-        .then(function (result) {
-        if (callback && typeof callback === 'function') {
-            callback(undefined, result);
-        }
-        return result;
-    })
-        .catch(function (error) {
-        if (callback && typeof callback === 'function') {
-            callback(error, undefined);
-        }
-        throw error;
+export var sendList = function (listTemplate, callback) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        return [2 /*return*/, RNKakaoLogins.sendList(listTemplate)
+                .then(function (result) {
+                if (callback && typeof callback === 'function') {
+                    callback(undefined, result);
+                }
+                return result;
+            })
+                .catch(function (error) {
+                if (callback && typeof callback === 'function') {
+                    callback(error, undefined);
+                }
+                throw error;
+            })];
     });
-};
+}); };
 /**
  * sendFeed
  * @param {FeedTemplateType} feedTemplate FeedTemplate Item
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export var sendFeed = function (feedTemplate, callback) {
-    return RNKakaoLogins.sendFeed(feedTemplate)
-        .then(function (result) {
-        if (callback && typeof callback === 'function') {
-            callback(undefined, result);
-        }
-        return result;
-    })
-        .catch(function (error) {
-        if (callback && typeof callback === 'function') {
-            callback(error, undefined);
-        }
-        throw error;
+export var sendFeed = function (feedTemplate, callback) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        return [2 /*return*/, RNKakaoLogins.sendFeed(feedTemplate)
+                .then(function (result) {
+                if (callback && typeof callback === 'function') {
+                    callback(undefined, result);
+                }
+                return result;
+            })
+                .catch(function (error) {
+                if (callback && typeof callback === 'function') {
+                    callback(error, undefined);
+                }
+                throw error;
+            })];
     });
-};
+}); };
 /**
  * sendText
  * @param {TextTemplateType} textTemplate TextTemplate Item
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export var sendText = function (textTemplate, callback) {
-    return RNKakaoLogins.sendText(textTemplate)
-        .then(function (result) {
-        if (callback && typeof callback === 'function') {
-            callback(undefined, result);
-        }
-        return result;
-    })
-        .catch(function (error) {
-        if (callback && typeof callback === 'function') {
-            callback(error, undefined);
-        }
-        throw error;
+export var sendText = function (textTemplate, callback) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        return [2 /*return*/, RNKakaoLogins.sendText(textTemplate)
+                .then(function (result) {
+                if (callback && typeof callback === 'function') {
+                    callback(undefined, result);
+                }
+                return result;
+            })
+                .catch(function (error) {
+                if (callback && typeof callback === 'function') {
+                    callback(error, undefined);
+                }
+                throw error;
+            })];
     });
-};
+}); };
 /**
  * sendLocation
  * @param {LocationTemplateType} locationTemplate LocationTemplate Item
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export var sendLocation = function (locationTemplate, callback) {
-    return RNKakaoLogins.sendLocation(locationTemplate)
-        .then(function (result) {
-        if (callback && typeof callback === 'function') {
-            callback(undefined, result);
-        }
-        return result;
-    })
-        .catch(function (error) {
-        if (callback && typeof callback === 'function') {
-            callback(error, undefined);
-        }
-        throw error;
+export var sendLocation = function (locationTemplate, callback) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        return [2 /*return*/, RNKakaoLogins.sendLocation(locationTemplate)
+                .then(function (result) {
+                if (callback && typeof callback === 'function') {
+                    callback(undefined, result);
+                }
+                return result;
+            })
+                .catch(function (error) {
+                if (callback && typeof callback === 'function') {
+                    callback(error, undefined);
+                }
+                throw error;
+            })];
     });
-};
+}); };
 /**
  * sendCustom
  * @param {CustomTemplateType} customTemplate CustomTemplate Item
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export var sendCustom = function (customTemplate, callback) {
-    return RNKakaoLogins.sendCustom(customTemplate)
-        .then(function (result) {
-        if (callback && typeof callback === 'function') {
-            callback(undefined, result);
-        }
-        return result;
-    })
-        .catch(function (error) {
-        if (callback && typeof callback === 'function') {
-            callback(error, undefined);
-        }
-        throw error;
+export var sendCustom = function (customTemplate, callback) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        return [2 /*return*/, RNKakaoLogins.sendCustom(customTemplate)
+                .then(function (result) {
+                if (callback && typeof callback === 'function') {
+                    callback(undefined, result);
+                }
+                return result;
+            })
+                .catch(function (error) {
+                if (callback && typeof callback === 'function') {
+                    callback(error, undefined);
+                }
+                throw error;
+            })];
     });
-};
+}); };
 // export declare type KakaoShareLinkType = {
 //   sendCommerce: typeof sendCommerce;
 //   sendList: typeof sendList;

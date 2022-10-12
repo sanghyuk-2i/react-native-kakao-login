@@ -336,7 +336,7 @@ export type CustomTemplateType = {
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export const sendCommerce = (
+export const sendCommerce = async (
   commerceTemplate: CommerceTemplateType,
   callback?: CallbackType,
 ): Promise<SendResultType> => {
@@ -360,7 +360,7 @@ export const sendCommerce = (
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export const sendList = (
+export const sendList = async (
   listTemplate: ListTemplateType,
   callback?: CallbackType,
 ): Promise<SendResultType> => {
@@ -384,7 +384,7 @@ export const sendList = (
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export const sendFeed = (
+export const sendFeed = async (
   feedTemplate: FeedTemplateType,
   callback?: CallbackType,
 ): Promise<SendResultType> => {
@@ -408,7 +408,7 @@ export const sendFeed = (
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export const sendText = (
+export const sendText = async (
   textTemplate: TextTemplateType,
   callback?: CallbackType,
 ): Promise<SendResultType> => {
@@ -432,7 +432,7 @@ export const sendText = (
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export const sendLocation = (
+export const sendLocation = async (
   locationTemplate: LocationTemplateType,
   callback?: CallbackType,
 ): Promise<SendResultType> => {
@@ -456,7 +456,7 @@ export const sendLocation = (
  * @param {CallbackType} [callback] callback function
  * @returns {Promise<SendResultType>}
  */
-export const sendCustom = (
+export const sendCustom = async (
   customTemplate: CustomTemplateType,
   callback?: CallbackType,
 ): Promise<SendResultType> => {
