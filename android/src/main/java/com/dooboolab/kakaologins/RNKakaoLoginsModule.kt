@@ -9,14 +9,16 @@ import com.kakao.sdk.auth.TokenManagerProvider
 import java.text.SimpleDateFormat
 import java.util.*
 
+import com.kakao.sdk.template.model.*
+import com.kakao.sdk.common.util.KakaoCustomTabsClient
+import com.kakao.sdk.link.LinkClient
+import com.kakao.sdk.link.WebSharerClient
+import android.content.ActivityNotFoundException
+
 class RNKakaoLoginsModule(private val reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
     private fun dateFormat(date: Date?): String {
         val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
         return sdf.format(date)
-    }
-
-    override fun getName(): String {
-        return "RNKakaoLogins"
     }
 
     @ReactMethod
@@ -260,7 +262,7 @@ class RNKakaoLoginsModule(private val reactContext: ReactApplicationContext) : R
     }
 
     // Share Link
-      override fun getName(): String {
+    override fun getName(): String {
     return "KakaoShareLink"
   }
 
