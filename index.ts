@@ -472,11 +472,11 @@ export const sendCustom = (
     });
 };
 
-// export declare type KakaoShareLinkType = {
-//   sendCommerce: typeof sendCommerce;
-//   sendList: typeof sendList;
-//   sendFeed: typeof sendFeed;
-//   sendText: typeof sendText;
-//   sendLocation: typeof sendLocation;
-//   sendCustom: typeof sendCustom;
-// };
+export type KakaoShareLinkType = {
+  sendCommerce: typeof sendCommerce;
+  sendList: typeof sendList;
+  sendFeed: typeof sendFeed;
+  sendText: typeof sendText;
+  sendLocation: typeof sendLocation;
+  sendCustom: typeof sendCustom;
+};

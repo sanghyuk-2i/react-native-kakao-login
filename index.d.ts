@@ -279,3 +279,11 @@ export declare const sendLocation: (locationTemplate: LocationTemplateType, call
  * @returns {Promise<SendResultType>}
  */
 export declare const sendCustom: (customTemplate: CustomTemplateType, callback?: CallbackType) => Promise<SendResultType>;
+export declare type KakaoShareLinkType = {
+    sendCommerce: typeof sendCommerce;
+    sendList: typeof sendList;
+    sendFeed: typeof sendFeed;
+    sendText: typeof sendText;
+    sendLocation: typeof sendLocation;
+    sendCustom: typeof sendCustom;
+};
